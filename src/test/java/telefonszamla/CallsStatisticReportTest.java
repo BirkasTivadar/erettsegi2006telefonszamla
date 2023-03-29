@@ -13,7 +13,6 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 
 class CallsStatisticReportTest {
 
@@ -77,6 +76,6 @@ class CallsStatisticReportTest {
     void testGetPayableForPeakTimeCalls() {
         callsStatisticReport.loadFromFile(path);
 
-        System.out.println(callsStatisticReport.getPayableForPeakTimeCalls());
+        assertEquals(12353.575, callsStatisticReport.getPayableForPeakTimeCalls(), 0.0001);
     }
 }
